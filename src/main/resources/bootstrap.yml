@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    usernane: root
+    password: root
+    url: jdbc:mysql://localhost:8889/storejava
+    driver-class-name: org.hibernate.dialect.MySQL5Dialect
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+  cloud:
+    config:
+      uri: http://localhost:8888
+  profiles:
+    active: DEV2
+
+management:
+  contextPath: /actuator
+  endpoints:
+    web:
+      exposure:
+        include: health, refresh, logger
+  endpoint:
+    health:
+      show-details : ALWAYS
