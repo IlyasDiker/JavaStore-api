@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -20,4 +21,7 @@ public class Product {
 
     @Column(columnDefinition = "LONGTEXT")
     private String picture;
+
+    @OneToMany(mappedBy = "product")
+    Set<ProductInvoice> orders;
 }

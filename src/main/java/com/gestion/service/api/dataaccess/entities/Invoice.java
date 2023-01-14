@@ -5,23 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "ORDERS")
-public class Order {
+@Table(name = "INVOICE")
+public class Invoice {
     @Id
     @GeneratedValue
     private int id;
 
-    @ManyToOne(targetEntity = Product.class, fetch=FetchType.EAGER)
-    @JoinColumn(name="product_id", nullable=false)
-    private Product product;
     private String uuid;
-
     private String firstname;
     private String lastname;
     private String email;
@@ -29,4 +26,7 @@ public class Order {
     private String card_number;
     private String security_code;
     private String expiration;
+
+    @OneToMany(mappedBy = "invoice")
+    Set<ProductInvoice> orders;
 }

@@ -1,26 +1,26 @@
 package com.gestion.service.api.logic.api;
 
-import com.gestion.service.api.dataaccess.dao.OrderRepository;
-import com.gestion.service.api.dataaccess.entities.Order;
+import com.gestion.service.api.dataaccess.dao.InvoiceRepository;
+import com.gestion.service.api.dataaccess.entities.Invoice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class OrderService {
+public class InvoiceService {
     @Autowired
-    private OrderRepository repository;
+    private InvoiceRepository repository;
 
-    public Order createOrder(Order order){
+    public Invoice createInvoice(Invoice order){
         return repository.save(order);
     }
 
-    public List<Order> getOrders(){
+    public List<Invoice> getInvoices(){
         return repository.findAll();
     }
 
-    public Order getOrderById(int id){
+    public Invoice getInvoiceById(int id){
         return repository.findById(id).orElse(null);
     }
 }
