@@ -16,7 +16,9 @@ public class Order {
     @Id
     @GeneratedValue
     private int id;
-    @ManyToOne(fetch=FetchType.LAZY)
+
+    @ManyToOne(targetEntity = Product.class, fetch=FetchType.EAGER)
+    @JoinColumn(name="product_id", nullable=false)
     private Product product;
     private String uuid;
 
