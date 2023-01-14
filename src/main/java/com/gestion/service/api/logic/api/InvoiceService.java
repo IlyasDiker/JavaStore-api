@@ -12,8 +12,8 @@ public class InvoiceService {
     @Autowired
     private InvoiceRepository repository;
 
-    public Invoice createInvoice(Invoice order){
-        return repository.save(order);
+    public Invoice createInvoice(Invoice invoice){
+        return repository.save(invoice);
     }
 
     public List<Invoice> getInvoices(){
