@@ -1,2 +1,5 @@
 build
-.grade
+.gradle/
+.idea/
+src/main/resources/application.properties
+build.gradle

@@ -10,6 +10,6 @@
         <module name="services.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>
