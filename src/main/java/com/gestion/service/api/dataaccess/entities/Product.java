@@ -22,6 +22,6 @@ public class Product {
     @Column(columnDefinition = "LONGTEXT")
     private String picture;
 
-    @OneToMany(mappedBy = "product")
-    Set<ProductInvoice> orders;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.PERSIST)
+    Set<ProductInvoice> productInvoices;
 }

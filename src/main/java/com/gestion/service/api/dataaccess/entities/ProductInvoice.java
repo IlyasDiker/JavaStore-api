@@ -15,12 +15,12 @@ public class ProductInvoice {
     @EmbeddedId
     ProductInvoiceKey id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @MapsId("productId")
     @JoinColumn(name = "product_id")
     Product product;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @MapsId("invoiceId")
     @JoinColumn(name = "invoice_id")
     Invoice invoice;

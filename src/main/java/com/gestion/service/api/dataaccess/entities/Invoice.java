@@ -27,6 +27,6 @@ public class Invoice {
     private String security_code;
     private String expiration;
 
-    @OneToMany(mappedBy = "invoice")
-    Set<ProductInvoice> orders;
+    @OneToMany(mappedBy = "invoice", cascade = CascadeType.PERSIST)
+    Set<ProductInvoice> productInvoices;
 }
